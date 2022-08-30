@@ -15,7 +15,7 @@ The manual exhaustively demonstrates the exact steps for users to add their own 
 9. Convert message between cyber's and Ros's message.
 
 ## Adding the appropriate Apollo's and Ros' message in the bridge
-Regarding this example, we are reusing the existing message format, which is Ros IMU message in the file [Imu.msg](https://github.com/AuroAi/apollo_ros_bridge/blob/master/ros_pkgs/src/common_msgs-indigo-devel/sensor_msgs/msg/Imu.msg).
+Regarding this example, we are reusing the existing message format, which is Ros IMU message in the file [Imu.msg](https://github.com/AuroAi/apollo_ros_bridge/blob/master/ros_pkgs/src/common_msgs-melodic-devel/sensor_msgs/msg/Imu.msg).
 
 ```sh
 Header header

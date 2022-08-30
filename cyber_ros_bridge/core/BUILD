@@ -8,7 +8,7 @@ cc_library(
     hdrs = ["parse_yaml.hpp",],
     deps = [
         "//cyber",
-        "@ros_indigo//:ros_indigo_common",
+        "@ros_melodic//:ros_melodic_common",
         "@yaml_cpp//:yaml"
 
     ],

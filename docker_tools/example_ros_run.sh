@@ -13,6 +13,6 @@ docker run \
   -e TZ=`cat /etc/timezone` \
   --network host \
   --privileged \
- ros:indigo-ros-core-trusty
+ ros:melodic-ros-core-trusty
 
 #   -v ``:/home/cyber_ros_bridge/.bazel

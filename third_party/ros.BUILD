@@ -26,6 +26,7 @@ cc_library(
         #        "lib/libtf.so",
         #        "lib/libtf2.so",
         #        "lib/libtf2_ros.so",
+        "lib/libtf_conversions.so",
         "lib/libtopic_tools.so",
         "lib/libxmlrpcpp.so",
         "lib/libmessage_filters.so",

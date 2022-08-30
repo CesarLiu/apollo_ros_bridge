@@ -8,7 +8,7 @@ cc_library(
    # includes = ["../common"],
     deps = [
         "//cyber",
-        "@ros_indigo//:ros_indigo_common",
+        "@ros_melodic//:ros_melodic_common",
         "@yaml_cpp//:yaml",
         "@ros_pkgs//:ros_pkgs",
         "//modules/localization/proto:localization_proto",

@@ -65,9 +65,9 @@ RUN  sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main
     apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 && \
 	apt-get update && apt-get install -y \ 
         dpkg \
-        ros-indigo-ros-comm \
-        ros-indigo-common-msgs \
-        ros-indigo-tf \
+        ros-melodic-ros-comm \
+        ros-melodic-common-msgs \
+        ros-melodic-tf \
         python-catkin-tools
 
 RUN sudo apt-get install libncurses5-dev libncursesw5-dev -y

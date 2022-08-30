@@ -81,11 +81,11 @@ new_local_repository(
     path = "/home/tmp/ros",
 )
 
-#ros_indigo
+#ros_melodic
 new_local_repository(
-    name = "ros_indigo",
-    build_file = "third_party/ros_indigo.BUILD",
-    path = "/opt/ros/indigo",
+    name = "ros_melodic",
+    build_file = "third_party/ros_melodic.BUILD",
+    path = "/opt/ros/melodic",
 )
 
 #ros_pkgs

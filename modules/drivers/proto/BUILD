@@ -15,11 +15,13 @@ proto_library(
         "conti_radar.proto",
         "delphi_esr.proto",
         "mobileye.proto",
+        "smartereye.proto",
         "pointcloud.proto",
         "racobit_radar.proto",
         "radar.proto",
         "sensor_image.proto",
         "ultrasonic_radar.proto",
+        "fortiss_hardware_status.proto",
     ],
     deps = [
         "//modules/common/proto:error_code_proto_lib",
