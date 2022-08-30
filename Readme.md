@@ -1,6 +1,8 @@
 
 # Apollo ROS Bridge
 
+## Mitigation
+@fortiss: adapt to apollo 5.5 (fortiss forked version) and ros melodic distro on Ubuntu 18.04.
 
 ## Overview
 
@@ -15,7 +17,7 @@ Lidar Pointcloud received from Apollo , converted and published as a ROS messag
 
 ## Dependencies
 
-- [Apollo 3.5 ](https://github.com/ApolloAuto/apollo/tree/r3.5.0 "Apollo 3.5 ") 
+- [Apollo 5.5 ](https://github.com/fortiss/apollo "fortiss Apollo") 
 - [nvidia docker ](https://github.com/NVIDIA/nvidia-docker "nvidia docker ")
 
 ## Installation
@@ -64,7 +66,7 @@ Alternatively, to launch the bridge with custom parameters,
 
     cyber_launch start cyber_ros_bridge/launch/bridge_example.launch
 
-Run [Apollo ](https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_3_5_quick_start.md "Apollo ")
+Run [Apollo ](https://github.com/fortiss/apollo/blob/dev_fortiss/docs/quickstart/apollo_5_5_quick_start.md "Apollo ")
 
 Topics can be visualized with rostopic list and echo
 
