@@ -32,14 +32,13 @@ class Time {
  public:
   static const Time MAX;
   static const Time MIN;
-  Time() {}
+  Time() = default;
   explicit Time(uint64_t nanoseconds);
   explicit Time(int nanoseconds);
   explicit Time(double seconds);
   Time(uint32_t seconds, uint32_t nanoseconds);
   Time(const Time& other);
   Time& operator=(const Time& other);
-  ~Time() {}
 
   /**
    * @brief get the current time.
@@ -62,6 +61,13 @@ class Time {
    * @return return a double value unit is second.
    */
   double ToSecond() const;
+
+  /**
+   * @brief convert time to microsecond (us).
+   *
+   * @return return a unit64_t value unit is us.
+   */
+  uint64_t ToMicrosecond() const;
 
   /**
    * @brief convert time to nanosecond.

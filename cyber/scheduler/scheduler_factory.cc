@@ -57,11 +57,11 @@ Scheduler* Instance() {
       conf.append(GlobalData::Instance()->ProcessGroup()).append(".conf");
       auto cfg_file = GetAbsolutePath(WorkRoot(), conf);
       apollo::cyber::proto::CyberConfig cfg;
-      std::unordered_map<std::string, InnerThread> inner_thr_confs;
       if (PathExists(cfg_file) && GetProtoFromFile(cfg_file, &cfg)) {
         policy = cfg.scheduler_conf().policy();
       } else {
-        AWARN << "No sched conf found, use default conf.";
+        AWARN << "Scheduler conf named " << cfg_file
+              << " not found, use default.";
       }
       if (!policy.compare("classic")) {
         obj = new SchedulerClassic();

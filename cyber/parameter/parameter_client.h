@@ -21,8 +21,9 @@
 #include <string>
 #include <vector>
 
-#include "cyber/parameter/parameter.h"
 #include "cyber/proto/parameter.pb.h"
+
+#include "cyber/parameter/parameter.h"
 #include "cyber/service/client.h"
 
 namespace apollo {
@@ -30,6 +31,11 @@ namespace cyber {
 
 class Node;
 
+/**
+ * @class ParameterClient
+ * @brief Parameter Client is used to set/get/list parameter(s)
+ * by sending a request to ParameterServer
+ */
 class ParameterClient {
  public:
   using Param = apollo::cyber::proto::Param;

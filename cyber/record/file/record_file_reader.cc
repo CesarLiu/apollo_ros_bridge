@@ -22,9 +22,7 @@ namespace apollo {
 namespace cyber {
 namespace record {
 
-RecordFileReader::RecordFileReader() : end_of_file_(false) {}
-
-RecordFileReader::~RecordFileReader() {}
+using apollo::cyber::proto::SectionType;
 
 bool RecordFileReader::Open(const std::string& path) {
   std::lock_guard<std::mutex> lock(mutex_);
@@ -47,7 +45,12 @@ bool RecordFileReader::Open(const std::string& path) {
   return true;
 }
 
-void RecordFileReader::Close() { close(fd_); }
+void RecordFileReader::Close() {
+  if (fd_ >= 0) {
+    close(fd_);
+    fd_ = -1;
+  }
+}
 
 bool RecordFileReader::Reset() {
   if (!SetPosition(sizeof(struct Section) + HEADER_LENGTH)) {
@@ -71,7 +74,7 @@ bool RecordFileReader::ReadHeader() {
            << ", actual: " << section.type;
     return false;
   }
-  if (!ReadSection<Header>(section.size, &header_)) {
+  if (!ReadSection<proto::Header>(section.size, &header_)) {
     AERROR << "Read header section fail, file is broken or it is not a record "
               "file.";
     return false;
@@ -103,7 +106,7 @@ bool RecordFileReader::ReadIndex() {
            << ", actual: " << section.type;
     return false;
   }
-  if (!ReadSection<Index>(section.size, &index_)) {
+  if (!ReadSection<proto::Index>(section.size, &index_)) {
     AERROR << "Read index section fail.";
     return false;
   }
@@ -142,6 +145,10 @@ bool RecordFileReader::SkipSection(int64_t size) {
     return false;
   }
   return true;
+}
+
+RecordFileReader::~RecordFileReader() {
+  Close();
 }
 
 }  // namespace record

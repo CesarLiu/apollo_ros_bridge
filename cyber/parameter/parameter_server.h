@@ -22,8 +22,9 @@
 #include <unordered_map>
 #include <vector>
 
-#include "cyber/parameter/parameter.h"
 #include "cyber/proto/parameter.pb.h"
+
+#include "cyber/parameter/parameter.h"
 #include "cyber/service/service.h"
 
 namespace apollo {
@@ -31,6 +32,15 @@ namespace cyber {
 
 class Node;
 
+/**
+ * @class ParameterServer
+ * @brief Parameter Service is a very important function of auto-driving.
+ * If you want to set a key-value, and hope other nodes to get the value,
+ * Routing, sensor internal/external references are set by Parameter Service
+ * ParameterServer can set a parameter, and then you can get/list
+ * paramter(s) by start a ParameterClient to send responding request
+ * @warning You should only have one ParameterServer works
+ */
 class ParameterServer {
  public:
   using Param = apollo::cyber::proto::Param;
@@ -65,7 +75,7 @@ class ParameterServer {
   /**
    * @brief get all the parameters
    *
-   * @param parameters
+   * @param parameters result Paramter vector
    */
   void ListParameters(std::vector<Parameter>* parameters);
 
