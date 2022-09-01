@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-cudnn7-devel-ubuntu14.04
+FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
 
 # Set TERM to suppress warning messages.
 ENV DEBIAN_FRONTEND=noninteractive \
@@ -72,4 +72,4 @@ RUN  sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main
 
 RUN sudo apt-get install libncurses5-dev libncursesw5-dev -y
 
-WORKDIR /home/apollo_ros_bridge
+WORKDIR /home/xliu/ws_xliu/apollo_ros_bridge

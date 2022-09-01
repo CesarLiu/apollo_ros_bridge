@@ -42,13 +42,13 @@ If no image name is provided, it defaults to auroai/apollo_ros_bridge:latest
 
 In order to build the bridge, first build the appropriate ros messages used in the bridge source code:
 
-    cd /home/apollo_ros_bridge/ros_pkgs
+    cd /home/xliu/ws_xliu/apollo_ros_bridge/ros_pkgs
     catkin build
     source devel/setup.bash
 
 Now, build the bridge source code using bazel. From the root workspace of the package,
      
-    cd /home/apollo_ros_bridge
+    cd /home/xliu/ws_xliu/apollo_ros_bridge
     bazel build cyber_ros_bridge:all
 
 
@@ -75,7 +75,7 @@ Alternatively, publish relevant topics from ROS and view topics using [cyber_mon
 A sample script to run a ROS Container has been provided to help developers. This can be launched using:
 
 ```bash
-cd /home/apollo_ros_bridge/docker_tools
+cd /home/xliu/ws_xliu/apollo_ros_bridge/docker_tools
 ./example_ros_run.sh
 ```
 

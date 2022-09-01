@@ -299,7 +299,7 @@ In order to build the bridge, first build the appropriate ros messages used in t
 
 Now, build the bridge source code using bazel. From the root workspace of the package,
      
-    cd /home/apollo_ros_bridge
+    cd /home/xliu/ws_xliu/apollo_ros_bridge
     bazel build cyber_ros_bridge:all
 
 
